@@ -5,10 +5,13 @@
 import sys
 
 total = len(sys.argv)
+exception_counter = 0
 counter = 0
 
 def found_print(line):
 	if "print" in line and "#" not in line:
+		global exception_counter
+		exception_counter += 1
 		print ("Print statement found at " + str(counter) + " |||| Note: Print statements may cause errors in Gradescope.")
 
 
@@ -35,5 +38,7 @@ else:
     		counter += 1
     		found_print(line)
 
+    	print ("Total exceptions found: " + str(exception_counter))
+
     except Exception as e:
-        print ("Error! - File Not Found!")
+        print (e)
