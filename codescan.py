@@ -40,4 +40,4 @@ else:
     	print ("Total exceptions found: " + str(exception_counter))
 
     except Exception as e:
-        print (e)
+        print ("Error! - File Not Found! Raw error is >>", e)
